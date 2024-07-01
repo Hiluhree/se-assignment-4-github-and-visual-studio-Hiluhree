@@ -80,6 +80,7 @@ Some important features of the github are;
 #### Explain what GitHub Actions are and how they can be used to automate workflows. Provide an example of a simple CI/CD pipeline using GitHub Actions.
 - GitHub Actions is a Continuous Integration/Continuous Deployment service which automates software workflows directly within GitHub repositories utilizing YAML syntax to create workflows.
 - Example of a simple CI/CD pipeline:
+  
      `name: CI
       on: [push]
       jobs:
