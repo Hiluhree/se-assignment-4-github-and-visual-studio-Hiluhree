@@ -49,16 +49,59 @@ Some important features of the github are;
 #### What are branches in GitHub, and why are they important? Describe the process of creating a branch, making changes, and merging it back into the main branch.
   - Branches are separate versions of a repository allowing developers to work on them without altering the primary codebase. They are vital for coordinating multiple features or bug fixes at once.
   - Process:
-   - Create a Branch: `git checkout -b new-feature`
-   - Make Changes: Modify files and commit changes.
-     - `git add .`
-     - `git commit -m "Add new feature"`
+    - Create a Branch: `git checkout -b new-feature`
+    - Make Changes: Modify files and commit changes.
+      - `git add .`
+      - `git commit -m "Add new feature"`
+    - Push the Branch to GitHub
+      - `git push origin new-feature`
+    - Create a Pull Request: Open a pull request on GitHub to merge changes.
+    - Review and Merge: After review, merge the branch into the main branch
+      - `git checkout main`
+      - `git merge new-feature`
+      - `git push origin main`
    
-Pull Requests and Code Reviews:
-What is a pull request in GitHub, and how does it facilitate code reviews and collaboration? Outline the steps to create and review a pull request.
+## 5. Pull Requests and Code Reviews:
+#### What is a pull request in GitHub, and how does it facilitate code reviews and collaboration? Outline the steps to create and review a pull request.
+- A PR (pull request) is a feature found on GitHub that makes it possible for developers to notify their team members before pushing changes to branches for more efficient code review and discussion before merging into master branch.
+- Steps to create and review a pull request:
+  - Push changes to a branch on GitHub.
+  - Navigate to the repository on GitHub.
+  - Click the "Pull requests" tab and then "New pull request."
+  - Select the branch with your changes and the base branch.
+  - Fill in the PR details: Title, description, and assign reviewers.
+  - Submit the PR for review.
+  - Reviewers provide feedback and request changes if necessary.
+  - Author makes revisions and updates the PR.
+  - Reviewers approve the PR.
+  - Merge the PR into the main branch.
+    
+## 6. GitHub Actions:
+#### Explain what GitHub Actions are and how they can be used to automate workflows. Provide an example of a simple CI/CD pipeline using GitHub Actions.
+- GitHub Actions is a Continuous Integration/Continuous Deployment service which automates software workflows directly within GitHub repositories utilizing YAML syntax to create workflows.
+- Example of a simple CI/CD pipeline:
+  - `name: CI`
+  - `on: [push]`
+  - `jobs:`
+   - `build:`
 
-GitHub Actions:
-Explain what GitHub Actions are and how they can be used to automate workflows. Provide an example of a simple CI/CD pipeline using GitHub Actions.
+     - `runs-on: ubuntu-latest`
+
+    - `steps:`
+     - `name: Checkout code`
+       - `uses: actions/checkout@v2`
+
+    - `name: Set up Node.js`
+      `uses: actions/setup-node@v2`
+      `with:`
+        `node-version: '14'`
+
+    - `name: Install dependencies`
+      `run: npm install`
+
+    - `name: Run tests`
+      `run: npm test`
+
 
 Introduction to Visual Studio:
 What is Visual Studio, and what are its key features? How does it differ from Visual Studio Code?
