@@ -81,9 +81,12 @@ Some important features of the github are;
 - GitHub Actions is a Continuous Integration/Continuous Deployment service which automates software workflows directly within GitHub repositories utilizing YAML syntax to create workflows.
 - Example of a simple CI/CD pipeline:
   
-     `name: CI
+      name: CI
+  
       on: [push]
+  
       jobs:
+  
        build:
    
         runs-on: ubuntu-latest
